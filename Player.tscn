@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/Martial Hero 2/Sprites/Idle.png" type="Texture" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Idle_right"
+length = 0.6
+loop = true
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[node name="Player" type="KinematicBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 0.678223, -1.05134, -5.27452, -12.1631, -4.87767, -37.1647, 1.47192, -50.2608, 6.63098, -37.9584, 7.02783, -14.5442 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -1.25992, -27.0883 )
+texture = ExtResource( 1 )
+hframes = 4
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Idle_right = SubResource( 1 )
