@@ -1,15 +1,155 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://assets/Martial Hero 2/Sprites/Idle.png" type="Texture" id=1]
-[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://assets/Martial Hero 2/Sprites/Idle_rev.png" type="Texture" id=2]
+[ext_resource path="res://assets/Martial Hero 2/Sprites/Run.png" type="Texture" id=3]
+[ext_resource path="res://assets/Martial Hero 2/Sprites/Fall.png" type="Texture" id=4]
+[ext_resource path="res://assets/Martial Hero 2/Sprites/Attack1.png" type="Texture" id=5]
+[ext_resource path="res://assets/Martial Hero 2/Sprites/Jump.png" type="Texture" id=6]
+[ext_resource path="res://assets/Martial Hero 2/Sprites/Death.png" type="Texture" id=7]
+[ext_resource path="res://assets/Martial Hero 2/Sprites/Attack2.png" type="Texture" id=8]
+[ext_resource path="res://assets/Martial Hero 2/Sprites/Take hit.png" type="Texture" id=9]
+[ext_resource path="res://Player.gd" type="Script" id=10]
 
 [sub_resource type="Animation" id=1]
-resource_name = "Idle_right"
+resource_name = "Attack1_E"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Attack1_E:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 0, 1 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "Attack1_W"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Attack1_W:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 0, 1 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "Attack2_E"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Attack2_E:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 0, 1 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Attack2_W"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("Attack2_W:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 0, 1 ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Death_E"
+length = 0.91
+step = 0.13
+tracks/0/type = "value"
+tracks/0/path = NodePath("Death_E:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.13, 0.26, 0.39, 0.52, 0.65, 0.78 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "Death_W"
+length = 0.91
+step = 0.13
+tracks/0/type = "value"
+tracks/0/path = NodePath("Death_W:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.13, 0.26, 0.39, 0.52, 0.65, 0.78 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.3
+loop = true
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath("Fall_E:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Fall_W"
+length = 0.3
+loop = true
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath("Fall_W:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=9]
 length = 0.6
 loop = true
 step = 0.15
 tracks/0/type = "value"
-tracks/0/path = NodePath("Sprite:frame")
+tracks/0/path = NodePath("Idle_E:frame")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
@@ -21,20 +161,264 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
+[sub_resource type="Animation" id=10]
+length = 0.6
+loop = true
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath("Idle_W:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=11]
+resource_name = "Jump_E"
+length = 0.3
+loop = true
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath("Jump_E:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "Jump_W"
+length = 0.3
+loop = true
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath("Jump_W:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Run_E:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=14]
+length = 0.8
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Run_W:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7 ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "Takehit_E"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Takehit_E:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 0, 1, 2 ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "Takehit_W"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Takehit_W:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 2, 0, 1, 2 ]
+}
+
 [node name="Player" type="KinematicBody2D"]
-position = Vector2( 499, 303 )
-script = ExtResource( 2 )
+position = Vector2( 316.357, 313.687 )
+script = ExtResource( 10 )
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
 polygon = PoolVector2Array( 0.678223, -1.05134, -5.27452, -12.1631, -4.87767, -37.1647, 1.47192, -50.2608, 6.63098, -37.9584, 7.02783, -14.5442 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Idle_E" type="Sprite" parent="."]
+visible = false
 position = Vector2( -1.25992, -27.0883 )
 texture = ExtResource( 1 )
 hframes = 4
 
+[node name="Idle_W" type="Sprite" parent="."]
+visible = false
+position = Vector2( 3.1748, -29.3669 )
+texture = ExtResource( 2 )
+hframes = 4
+frame = 3
+
+[node name="Run_E" type="Sprite" parent="."]
+visible = false
+position = Vector2( -3.57166, -28.9701 )
+texture = ExtResource( 3 )
+hframes = 8
+
+[node name="Run_W" type="Sprite" parent="."]
+visible = false
+position = Vector2( 2.67267, -28.9542 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 3 )
+hframes = 8
+frame = 7
+
+[node name="Fall_E" type="Sprite" parent="."]
+visible = false
+position = Vector2( -9.52441, -28.9701 )
+texture = ExtResource( 4 )
+hframes = 2
+frame = 1
+
+[node name="Fall_W" type="Sprite" parent="."]
+visible = false
+position = Vector2( 12.4726, -28.9542 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 4 )
+hframes = 2
+frame = 1
+
+[node name="Attack1_E" type="Sprite" parent="."]
+visible = false
+position = Vector2( 5.19131, -30.6759 )
+texture = ExtResource( 5 )
+hframes = 4
+frame = 1
+
+[node name="Attack1_W" type="Sprite" parent="."]
+visible = false
+position = Vector2( -0.471924, -28.7882 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 5 )
+hframes = 4
+
+[node name="Attack2_E" type="Sprite" parent="."]
+visible = false
+position = Vector2( -10.8546, -28.7882 )
+texture = ExtResource( 8 )
+hframes = 4
+frame = 1
+
+[node name="Attack2_W" type="Sprite" parent="."]
+visible = false
+position = Vector2( 12.7423, -27.8443 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 8 )
+hframes = 4
+frame = 1
+
+[node name="Death_E" type="Sprite" parent="."]
+visible = false
+position = Vector2( -1.33636, -28.0633 )
+texture = ExtResource( 7 )
+hframes = 7
+frame = 5
+
+[node name="Death_W" type="Sprite" parent="."]
+visible = false
+position = Vector2( 3.5636, -28.9542 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 7 )
+hframes = 7
+frame = 6
+
+[node name="Jump_E" type="Sprite" parent="."]
+visible = false
+position = Vector2( -4.94974, -28.2843 )
+texture = ExtResource( 6 )
+hframes = 2
+frame = 1
+
+[node name="Jump_W" type="Sprite" parent="."]
+visible = false
+position = Vector2( 6.01038, -25.1023 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 6 )
+hframes = 2
+frame = 1
+
+[node name="Takehit_E" type="Sprite" parent="."]
+visible = false
+position = Vector2( -0.629959, -29.2932 )
+texture = ExtResource( 9 )
+hframes = 3
+frame = 2
+
+[node name="Takehit_W" type="Sprite" parent="."]
+visible = false
+position = Vector2( 3.14981, -28.6632 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 9 )
+hframes = 3
+frame = 2
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/Idle_right = SubResource( 1 )
+anims/Attack1_E = SubResource( 1 )
+anims/Attack1_W = SubResource( 2 )
+anims/Attack2_E = SubResource( 3 )
+anims/Attack2_W = SubResource( 4 )
+anims/Death_E = SubResource( 5 )
+anims/Death_W = SubResource( 6 )
+anims/Fall_E = SubResource( 7 )
+anims/Fall_W = SubResource( 8 )
+anims/Idle_E = SubResource( 9 )
+anims/Idle_W = SubResource( 10 )
+anims/Jump_E = SubResource( 11 )
+anims/Jump_W = SubResource( 12 )
+anims/Run_E = SubResource( 13 )
+anims/Run_W = SubResource( 14 )
+anims/Takehit_E = SubResource( 15 )
+anims/Takehit_W = SubResource( 16 )
